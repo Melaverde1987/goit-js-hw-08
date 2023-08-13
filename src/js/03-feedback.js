@@ -6,8 +6,8 @@ const message = document.querySelector('textarea');
 const form = document.querySelector('.feedback-form');
 
 let data = JSON.parse(localStorage.getItem(FORM_STATE)) || {};
-input.value = data.email;
-message.value = data.message;
+input.value = data.email || '';
+message.value = data.message || '';
 
 input.addEventListener('input', throttle(checkInput), 500);
 message.addEventListener('input', throttle(checkMessage), 500);
