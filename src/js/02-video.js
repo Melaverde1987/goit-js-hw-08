@@ -7,7 +7,7 @@ const CURRENT_TIME_KEY = 'videoplayer-current-time';
 let currentTime;
 
 player.on(
-  'pause',
+  'timeupdate',
   throttle(({ seconds }) => {
     localStorage.setItem(CURRENT_TIME_KEY, seconds);
   }, 1000)
